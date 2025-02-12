@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="account-title"></h1>
+
+        <p id="total-balance"></p> <!-- Solde global -->
+
+        <div>
+            <label for="month">Mois :</label>
+                <select id="month" onchange="filterTransactions()">
+                    <option value="all">Année entière</option>
+                    <option value="01">Janvier</option>
+                    <option value="02">Février</option>
+                    <option value="03">Mars</option>
+                    <option value="04">Avril</option>
+                    <option value="05">Mai</option>
+                    <option value="06">Juin</option>
+                    <option value="07">Juillet</option>
+                    <option value="08">Août</option>
+                    <option value="09">Septembre</option>
+                    <option value="10">Octobre</option>
+                    <option value="11">Novembre</option>
+                    <option value="12">Décembre</option>
+                </select>
+
+                <label for="year">Année :</label>
+                <select id="year" onchange="filterTransactions()"></select>
+
+        </div>
+
+        <h2>Catégories</h2>
+
+        <h3>Recettes</h3>
+        <div id="income-categories"></div>
+
+        <h3>Dépenses</h3>
+        <div id="expense-categories"></div>
+
+        <button class="btn" onclick="openCategoryModal()">Ajouter une catégorie</button>
+        <button class="btn" onclick="goToTransactions()">Voir les transactions</button>
+        <button class="btn" onclick="goToHome()">Retour</button>
+    </div>
+
+    <div id="category-modal" class="modal">
+        <h2>Ajouter une catégorie</h2>
+        <input type="text" id="category-name" placeholder="Nom de la catégorie">
+        <select id="category-type">
+            <option value="Dépense">Dépense</option>
+            <option value="Recette">Recette</option>
+        </select>
+        <button class="btn" onclick="addCategory()">Ajouter</button>
+        <button class="btn" onclick="closeCategoryModal()">Annuler</button>
+    </div>
+
+    <script src="account.js"></script>
+</body>
+</html>

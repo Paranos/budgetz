@@ -1,39 +1,129 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f3f3f3;
     font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #cfd9df, #e2ebf0);
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
 }
+
 .container {
+    width: 80%;
+    margin: auto;
     background: white;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    text-align: left;
 }
-input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+
+h1, h2, h3 {
+    color: #34495e;
 }
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: blue;
+
+.btn {
+    padding: 10px 20px;
+    background-color: #3498db;
     color: white;
     border: none;
+    cursor: pointer;
     border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background: #ecf0f1;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.delete-btn {
+    background-color: white;
+    border: none;
     cursor: pointer;
 }
-.error {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 5px;
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+input, select {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin: 10px;
+}
+
+.beneficiary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 20px; /* Espacement interne */
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Ligne de séparation entre les lignes */
+}
+
+thead {
+    background-color: #f4f4f4; /* Fond des entêtes */
+}
+
+th {
+    font-weight: bold;
+    color: #333; /* Couleur des textes des entêtes */
+}
+
+tr:hover {
+    background-color: #f9f9f9; /* Couleur au survol des lignes */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fond alterné pour les lignes paires */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* Fond pour les lignes impaires */
+}
+
+tfoot {
+    background-color: #f4f4f4;
+}
+
+tfoot td {
+    font-weight: bold;
 }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="transactions-title"></h1>
+        <button class="btn" onclick="openTransactionModal()">Ajouter une transaction</button>
+        <button class="btn" onclick="goToAccount()">Retour</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Montant</th>
+                    <th>Bénéficiaire</th>
+                    <th>Catégorie</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="transactions-list"></tbody>
+        </table>
+
+        <button class="btn" onclick="openTransactionModal()">Ajouter une transaction</button>
+        <button class="btn" onclick="goToAccount()">Retour</button>
+
+        <input type="file" id="qifFileInput" accept=".qif" onchange="handleQIFImport(event)">
+<button class="btn" onclick="document.getElementById('qifFileInput').click()">Importer un fichier QIF</button>
+    </div>
+
+    <!-- Modale d'ajout de transaction -->
+    <div id="transaction-modal" class="modal">
+        <h2>Ajouter une transaction</h2>
+        <input type="text" id="transaction-description" placeholder="Description">
+        <input type="number" id="transaction-amount" placeholder="Montant">
+        <input type="date" id="transaction-date">
+
+        <select id="transaction-beneficiary">
+            <option value="">Sélectionner un bénéficiaire</option>
+        </select>
+        <button class="btn" onclick="openBeneficiaryModal()">Ajouter un bénéficiaire</button>
+
+        <select id="transaction-category">
+            <option value="Alimentation">Alimentation</option>
+            <option value="Transport">Transport</option>
+            <option value="Logement">Logement</option>
+            <option value="Loisirs">Loisirs</option>
+            <option value="Autre">Autre</option>
+        </select>
+
+        <button class="btn" onclick="addTransaction()">Ajouter</button>
+        <button class="btn" onclick="closeTransactionModal()">Annuler</button>
+    </div>
+
+    <!-- Modale d'ajout de bénéficiaire -->
+    <div id="beneficiary-modal" class="modal">
+        <h2>Ajouter un bénéficiaire</h2>
+        <input type="text" id="new-beneficiary" placeholder="Nom du bénéficiaire">
+        <button class="btn" onclick="addBeneficiary()">Ajouter</button>
+        <button class="btn" onclick="closeBeneficiaryModal()">Annuler</button>
+    </div>
+
+    <script src="transactions.js"></script>
+</body>
+</html>

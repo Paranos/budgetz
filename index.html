@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Application</title>
+    <title>Gestion de Budget</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Mon Application</h1>
     <div class="container">
-        <input type="text" id="login" placeholder="Login">
-        <input type="password" id="password" placeholder="Mot de passe">
-        <p class="error" id="error-message"></p>
-        <button onclick="handleLogin()">Se connecter</button>
+        <h1>Mes Comptes</h1>
+        <div id="accounts-list"></div>
+        <button class="btn" onclick="openModal()">Ajouter un compte</button>
+        <button class="btn" onclick="goToBeneficiaries()">Gérer les bénéficiaires</button>
     </div>
-    <script src="script.js"></script>
+
+    <div id="modal" class="modal">
+        <h2>Ajouter un compte</h2>
+        <input type="text" id="account-name" placeholder="Nom du compte">
+        <button class="btn" onclick="addAccount()">Ajouter</button>
+        <button class="btn" onclick="closeModal()">Annuler</button>
+    </div>
+
+    <div id="delete-modal" class="modal">
+        <h2>Confirmer la suppression</h2>
+        <p>Voulez-vous vraiment supprimer ce compte ?</p>
+        <button class="btn" id="confirm-delete">Oui</button>
+        <button class="btn" onclick="closeDeleteModal()">Non</button>
+    </div>
+
+    <script>
+        function goToBeneficiaries() {
+            window.location.href = "beneficiaries.html";
+        }
+    </script>
+    <script src="index.js"></script>
 </body>
 </html>

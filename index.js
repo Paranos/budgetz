@@ -17,12 +17,18 @@ function loadAccounts() {
     });
 }
 
-function openModal() { document.getElementById("modal").style.display = "block"; }
-function closeModal() { document.getElementById("modal").style.display = "none"; }
+function openModal() {
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
 
 function addAccount() {
     let name = document.getElementById("account-name").value;
     if (!name) return;
+    
     let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
     accounts.push({ name: name, balance: 0, transactions: [], categories: [] });
     localStorage.setItem("accounts", JSON.stringify(accounts));
@@ -37,7 +43,9 @@ function confirmDelete(index) {
     };
 }
 
-function closeDeleteModal() { document.getElementById("delete-modal").style.display = "none"; }
+function closeDeleteModal() {
+    document.getElementById("delete-modal").style.display = "none";
+}
 
 function deleteAccount(index) {
     let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
@@ -45,4 +53,8 @@ function deleteAccount(index) {
     localStorage.setItem("accounts", JSON.stringify(accounts));
     closeDeleteModal();
     loadAccounts();
+}
+
+function goToBeneficiaries() {
+    window.location.href = "beneficiaries.html";
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Bénéficiaires</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Liste des Bénéficiaires</h1>
+        <div id="beneficiaries-list"></div>
+        <button class="btn" onclick="openBeneficiaryModal()">Ajouter un bénéficiaire</button>
+        <button class="btn" onclick="goBack()">Retour</button>
+    </div>
+
+    <div id="beneficiary-modal" class="modal">
+        <h2>Ajouter un bénéficiaire</h2>
+        <input type="text" id="beneficiary-name" placeholder="Nom du bénéficiaire">
+        <button class="btn" onclick="addBeneficiary()">Ajouter</button>
+        <button class="btn" onclick="closeBeneficiaryModal()">Annuler</button>
+    </div>
+
+    <script src="beneficiaries.js"></script>
+</body>
+</html>
